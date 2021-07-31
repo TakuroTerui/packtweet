@@ -43,9 +43,9 @@
           <a class="js-modal-close">✖️</a>
         </div>
         <?= form_open('tweets/create', ['class' => 'modal-form']); ?>
-          <?= form_textarea(['name' => 'content',  'class' => 'form-control modal-text', 'placeholder' => 'いまどうしてる？', 'cols' => '50', 'rows' => '10', 'maxlength' => 140]); ?>
+          <?= form_textarea(['name' => 'content',  'class' => 'form-control modal-text tweet-textarea', 'placeholder' => 'いまどうしてる？', 'cols' => '50', 'rows' => '10', 'maxlength' => 140]); ?>
           <span class="help-block modal-validate"></span>
-          <?= form_button(['type' => 'submit', 'class' => 'btn btn-success pull-right modal-submit', 'content' => "ツイートする"]) ?>
+          <button type="submit", class="btn btn-success pull-right modal-submit tweet-btn" disabled>ツイートする</button>
         <?= form_close(); ?>
       </div>
     </div>
