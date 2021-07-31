@@ -55,12 +55,18 @@ class Tweets extends CI_Controller
 
 		public function show($tweetId)
 		{
-				$this->load->model('comment_model');
-				$data['tweet'] = $this->tweet_model->getByTweetId($tweetId);
-                $data['comments'] = $this->comment_model->get_by_tweet_id($tweetId);
-				$this->load->view('common/header');
-				$this->load->view('common/sidebar');
-				$this->load->view('users/show_tweet', $data);
+            $this->load->model('comment_model');
+            $data['tweet'] = $this->tweet_model->getByTweetId($tweetId);
+            $data['comments'] = $this->comment_model->get_by_tweet_id($tweetId);
+            $data['csrf'] = [
+                'name' => $this->security->get_csrf_token_name(),
+                'hash' => $this->security->get_csrf_hash()
+            ];
+            $data['favoritesCount'] = count($this->favorite_model->getByTweetId($tweetId));
+
+            $this->load->view('common/header');
+            $this->load->view('common/sidebar');
+            $this->load->view('users/show_tweet', $data);
 		}
 
 		public function delete($tweetId)

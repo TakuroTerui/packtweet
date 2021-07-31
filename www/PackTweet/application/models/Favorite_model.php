@@ -53,4 +53,10 @@ class Favorite_model extends CI_Model
         $query = $this->db->get('favorites');
         return $query->result_array();
     }
+
+    public function getByTweetId($tweetId)
+    {
+        $query = $this->db->get_where('favorites', array('tweet_id' => $tweetId));
+        return $query->result_array();
+    }
 }
