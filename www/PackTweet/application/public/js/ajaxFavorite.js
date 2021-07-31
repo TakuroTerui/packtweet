@@ -8,6 +8,7 @@ $(function() {
     postdata[csrf_name] = csrf_hash;
 
     $('#favorite-button').on('click', function () {
+      e.preventDefault();
       $.ajax({
           url : 'tweets/favorite',
           type: 'POST',
