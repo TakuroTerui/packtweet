@@ -133,6 +133,6 @@ class Tweets extends CI_Controller
     {
         $userId = $_SESSION['user_id'];
         $this->tweet_model->createRetweet($tweetId, $userId);
-        redirect('/');
+        redirect('tweets/' . $tweetId);
     }
 }

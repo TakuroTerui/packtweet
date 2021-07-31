@@ -24,7 +24,7 @@
       <?= form_open('tweets/retweet/' . $tweet['tweet_id']); ?>
         <div class="show-icon">
           <div class="pull-right retweet-count"><?= $tweet['retweet_count'] ?></div>
-          <?= form_button(['type' => 'submit', 'class' => 'btn btn-retweet pull-right', 'content' => "<i class='fas fa-retweet fa-2x'></i>"]) ?>
+          <?= form_button(['type' => 'submit', 'id' => 'retweet-button', 'class' => 'btn btn-retweet pull-right', 'content' => "<i class='fas fa-retweet fa-2x'></i>"]) ?>
         </div>
       <?= form_close(); ?>
 
@@ -50,5 +50,6 @@
 </div>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="application/public/js/ajaxFavorite.js"></script>
+<script src="application/public/js/ajaxRetweet.js"></script>
 </body>
 </html>
