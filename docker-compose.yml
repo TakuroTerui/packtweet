@@ -22,7 +22,7 @@ services:
       - MYSQL_DATABASE=packtweet
       - LANG=C.UTF-8
     volumes:
-      - db:/var/lib/mysql
+      - ./db:/var/lib/mysql
     command: mysqld --sql-mode=NO_ENGINE_SUBSTITUTION --character-set-server=utf8 --collation-server=utf8_unicode_ci
 
 volumes:
